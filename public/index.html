@@ -39,7 +39,7 @@
         button:hover {
             background-color: #245e94c7;
         }
-        error {
+        #error {
             color: red;
             display: none;
             margin-top: 10px;
@@ -54,7 +54,7 @@
             <input type="text" id="email" placeholder="Email" required>
             <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Login</button>
-            <error id="error" class="error"></error>
+            <div id="error" class="error"></div>
             <p style="font-size: 14px; margin-top: 15px;" align="center">
                 <a href="register.html">Not yet a customer?</a>
             </p>
@@ -71,8 +71,7 @@
             let errors = []
         
             if (!email.includes('@')) {
-                errorDiv.push('Please enter a valid email address.');
-                return;
+                errors.push('Please enter a valid email address.');
             }
 
             if (password.length < 8) {
